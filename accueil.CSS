@@ -90,7 +90,7 @@ a{
     width: 100%;
     position: fixed;
 }
-.img_acc{
+.img_acc, .img_acc img{ /* propriétés de l'image et de sa hitbox */
     width: 145px;
     height: 80px;
     align-self: flex-start;
