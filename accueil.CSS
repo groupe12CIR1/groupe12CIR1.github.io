@@ -7,7 +7,7 @@ a{
     text-decoration: none;
     color:rgb(128, 85, 59);
 }
-.element{ /* test comm */
+.element{
     display: flex;
     padding: 0;
     margin: 0;
