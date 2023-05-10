@@ -1,3 +1,68 @@
+/* application des paramètres à tous les headers sans passer par l'ID car ils sont les mêmes sur toutes les pages */
+header {
+    background-color: #b090f4;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    display:flex;
+
+
+    /* nav */
+    order: 2;
+    overflow:inherit;
+
+    background-color: #6d43c8;
+    align-self:center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    /* inherited from navbar */
+    padding: 0px 0px 0px 0px;
+    margin: 0px;
+    /*text-align: center;*/
+    /* display:inline-block; */
+    /*vertical-align:top;*/
+}
+
+header nobr {
+    list-style: none;
+    align-self:center;
+
+    list-style-type: none;
+    height: 24px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    display: inline;
+
+    padding: .5em .5em;
+    margin: .3em;
+    background-color: #b090f4;
+    font-family: 'Kanit';
+    text-transform: uppercase;
+    border-radius: 30px;
+}
+
+header nobr a, header nobr div button {
+    padding: 20px 20px 20px 20px;
+    color: rgb(128, 85, 59);
+    font-size: 16px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    line-height: 0px;
+    padding: 5px 12px;
+}
+
+header nobr:hover {
+    background-color: #dcd1f4;
+}
+
+header nobr a:hover {
+    background-color: #dcd1f4;
+}
+
 body{
     padding: 0;
     margin: 0;
@@ -7,6 +72,12 @@ a{
     text-decoration: none;
     color:rgb(128, 85, 59);
 }
+
+.material-icons{
+    vertical-align: text-top;
+    font-size: 18px !important;
+}
+
 .element{
     display: flex;
     padding: 0;
@@ -25,73 +96,8 @@ a{
     align-self: flex-start;
 }
 
-
-.bloc1:hover{
-    background-color: #dcd1f4;
-}
-.bloc2:hover{
-    background-color: #dcd1f4;
-}
-.bloc3:hover{
-    background-color: #dcd1f4;
-}
-.bloc4:hover{
-    background-color: #dcd1f4;
-}
-.bloc5:hover{
-    background-color: #dcd1f4;
-}
 .b1:hover{
     background-color: #dcd1f4;
-}
-.bloc{
-    padding: .5em .5em;
-    margin: .3em;
-    background-color: #b090f4;
-    font-family: 'Kanit';
-    text-transform: uppercase;
-    border-radius: 30px;
-}
-.bloc1{
-    padding: .5em .5em;
-    margin: .3em;
-    background-color: #b090f4;
-    font-family: 'Kanit';
-    text-transform: uppercase;
-    border-radius: 30px;
-}
-
-.bloc2{
-    padding: .5em 1em;
-    margin: .3em;
-    background-color: #b090f4;
-    font-family: 'Kanit';
-    text-transform: uppercase;
-    border-radius: 30px;
-}
-.bloc3{
-    padding: .5em 1em;
-    margin: .3em;
-    background-color: #b090f4;
-    font-family: 'Kanit';
-    text-transform: uppercase;
-    border-radius: 30px;
-}
-.bloc4{
-    padding: .5em 1em;
-    margin: .3em;
-    background-color: #b090f4;
-    font-family: 'Kanit';
-    text-transform: uppercase;
-    border-radius: 30px;
-}
-.bloc5{
-    padding: .5em 1em;
-    margin: .3em;
-    background-color: #b090f4;
-    font-family: 'Kanit';
-    text-transform: uppercase;
-    border-radius: 30px;
 }
 
 .b1{
