@@ -3,7 +3,7 @@ body{
     margin: 0;
     font-family: 'Kanit';
 }
-a{ /* ajout d'un commentaire de test */
+a{
     text-decoration: none;
     color:rgb(128, 85, 59);
 }
