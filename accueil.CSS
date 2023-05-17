@@ -300,6 +300,15 @@ img{
     padding-left: 1em;
 }
 
+#clock {
+    font-size: 15px;
+    width: 65px;
+    margin: 20px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
 /* Menus de recherche du navbar */
 
 .dropbtn{
