@@ -6,7 +6,6 @@ main();
 
 function load(){
     let load = document.getElementById('body');
-    
 
     // Créez un élément <img> pour afficher le GIF
     const gif = document.createElement('img');
@@ -23,6 +22,7 @@ function load(){
     // Supprimez le GIF après 2 secondes
     setTimeout(() => {
     load.removeChild(gif);
+    
     }, 4000);
     
 }
