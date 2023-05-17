@@ -302,11 +302,12 @@ img{
 
 #clock {
     font-size: 15px;
-    width: 65px;
+    width: 50px;
     margin: 20px;
     text-align: center;
+    text-shadow: #d8232a;
     border: 2px solid black;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 /* Menus de recherche du navbar */
