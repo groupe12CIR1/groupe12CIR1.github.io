@@ -43,4 +43,11 @@ function button_hover(){
     console.log("#dcd1f4");
 }
 
+function hideLoader() {
+    $('#loader_gif').hide();
+}
+//$(window).ready(hideLoader); // décommenter si on veut qu'il se cache dès que la page est chargée
+// cache le loader après 5 secondes
+setTimeout(hideLoader, 5000);
+
 showTime();

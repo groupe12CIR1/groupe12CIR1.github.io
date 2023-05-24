@@ -88,6 +88,17 @@ header nobr:hover {
     border-radius: 10px;
 }
 
+/* gif de chargement */
+#loader_gif {
+    background: url('https://cdn.discordapp.com/attachments/1108361646059036703/1110920062082240642/chips-potato-chips.gif') no-repeat center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999999;
+}
+
 /* Menus de recherche du navbar */
 .dropbtn{
     background-color: transparent;
