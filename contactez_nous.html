@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
+        <link href="navbar/navbar.css" rel="stylesheet">
         <link href="contactez_nous.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Kanit' rel='stylesheet'>
         <meta charset="utf-8">
@@ -11,35 +12,32 @@
     </head>
 
     <header>
-        <div class="element">
-            <div id="bloc"><a href="accueil.html" target="_blank"><img class="img_acc" src="Images_H/LabISEN.png"></a></div>
-            <nav>
-                <hrecherche class="bloc1">
-                    <a href="Recherches.html" target="_blank">Recherche</a>
-                    <img src="Images_H/icon_recherches.svg" id="icon">
-                </hrecherche>
-
-                <hprojet class="bloc2">
-                    <a href="Projet.html" target="_blank">Projets</a>
-                    <img src="Images_H/icon_projet.svg" id="icon">
-                </hprojet>
-
-                <hpubli class="bloc3">
-                    <a href="Publications.html" target="_blank">Publications</a>
-                    <img src="Images_H/icon_publications.svg" id="icon">
-                </hpubli>
-
-                <hpartenaire class="bloc4">
-                    <a href="Partenaires.html" target="_blank">Partenaires</a>
-                    <img src="Images_H/icon_partenaires.svg" id="icon">
-                </hpartenaire>
-
-                <hcontact class="bloc5">
-                    <a href="Infos_et_contact.html" target="_blank">Infos&contacts</a>
-                    <img src="Images_H/icon_contact.svg" id="icon">
-                </hcontact>
-              </nav>                   
-        </div>
+        <a id="labisenlogo" class="img_acc" href="Accueil.html"><img src="Images_H/LabISEN.png" href="Accueil.html" alt="LabISEN" id="header-img" width="170px"height="70px"></a>
+        <div id="clock">0:0:00</div>
+        <nobr><a class="nav-link" href="Accueil.html"><span class="material-icons">home</span> Accueil</a></nobr>
+        <nobr>
+            <div class="dropdown">
+                <button class="dropbtn">Recherche<span class="material-icons">expand_more</span></button>
+                <div class="dropdown-content">
+                    <a href="Nos_axes.html"><span class="material-icons">biotech</span> Thématiques de Recherche</a>
+                    <a href="plateformes_tech.html"><span class="material-icons">domain</span> Plateformes Technologique</a>
+                </div>
+            </div> 
+        </nobr>
+        <nobr><a onclick="members_click()"><span class="material-icons">people</span> Membres</a></nobr>
+        <nobr><a href="Projets.html"><span class="material-icons">list_alt</span> Projets</a></nobr>
+        <nobr><a href="Publications.html"><span class="material-icons">feed</span> Publication</a></nobr>
+        <nobr><a href="Partenaires.html"><span class="material-icons">handshake</span> Partenaires</a></nobr>   
+        <nobr>
+            <div class="dropdown">
+                <button class="dropbtn">Contact<span class="material-icons">expand_more</span></button>
+                <div class="dropdown-content">
+                    <a href="contactez_nous.html"><span class="material-icons">contact_mail</span> Contactez-Nous</a>
+                    <a href="plan_daccès.html"><span class="material-icons">map</span> Plan d'accès</a>
+                    <a href="offre_demploi.html"><span class="material-icons">work_outline</span> Offres d'emploi</a>
+                </div>
+            </div>
+        </nobr>
     </header>
 
     <body>
