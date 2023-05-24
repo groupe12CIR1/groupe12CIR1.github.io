@@ -1,0 +1,129 @@
+/* application des paramètres à tous les headers sans passer par l'ID car ils sont les mêmes sur toutes les pages */
+header {
+    background-color: #b090f4;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    display:flex;
+
+
+    /* nav */
+    order: 2;
+    overflow:inherit;
+
+    background-color: #6d43c8;
+    align-self:center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    /* inherited from navbar */
+    padding: 0px 0px 0px 0px;
+    margin: 0px;
+    /*text-align: center;*/
+    /* display:inline-block; */
+    /*vertical-align:top;*/
+}
+
+header nobr {
+    list-style: none;
+    align-self:center;
+
+    list-style-type: none;
+    height: 24px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    display: inline;
+
+    padding: .5em .5em;
+    margin: .3em;
+    background-color: #b090f4;
+    font-family: 'Kanit';
+    text-transform: uppercase;
+    border-radius: 30px;
+}
+
+header nobr a, header nobr div button {
+    /*padding: 20px 20px 20px 20px;*/
+    color: rgb(128, 85, 59);
+    font-size: 16px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    line-height: 0px;
+    padding: 11px 5px;
+}
+
+header nobr:hover {
+    background-color: #dcd1f4;
+}
+
+/* icônes */
+.material-icons{ 
+    vertical-align: text-top;
+    font-size: 18px !important;
+}
+
+/* propriétés de l'image du logo ISEN et de sa hitbox */
+.img_acc, .img_acc img{ 
+    width: 145px;
+    height: 80px;
+    align-self: flex-start;
+}
+
+/* horloge */
+#clock {
+    font-size: 15px;
+    width: 50px;
+    margin: 20px;
+    text-align: center;
+    text-shadow: #d8232a;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+/* Menus de recherche du navbar */
+.dropbtn{
+    background-color: transparent;
+    color: rgb(128, 85, 59);
+    padding: 0px 10px 5px 10px;
+    font-size: 16px;
+    font-family: 'Kanit', "Trebuchet MS", Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    line-height: 0px;
+    border: none;
+}
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a{
+    color: black;
+    padding: 5px 12px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #dcd1f4;
+}
