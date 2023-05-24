@@ -96,21 +96,6 @@ a{
     align-self: flex-start;
 }
 
-.b1:hover{
-    background-color: #dcd1f4;
-}
-
-.b1{
-    padding: .5em 1em;
-    margin: 1.3em;
-    background-color: #b090f4;
-    font-family: 'Kanit';
-    text-transform: uppercase;
-    border-radius: 30px;
-    width: 75px;
-    position: fixed;
-}
-
 #icon{
     width: 25px;
     height: 25px;
@@ -144,16 +129,6 @@ a{
     display: flex;
     justify-content: space-around;
 }
-
-.boxing{
-    box-sizing: border-box;
-    border: 1px dashed black;
-    border-radius: .5em;
-    padding: .5em;
-    margin: .5em;
-}
-
-
 
 #button1{
     padding: 1em;
