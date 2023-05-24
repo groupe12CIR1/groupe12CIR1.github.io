@@ -59,6 +59,11 @@ header nobr:hover {
     background-color: #dcd1f4;
 }
 
+/* bouton menant vers la page actuellement sélectionnée */
+#selected_page {
+    background-color: white;
+}
+
 /* icônes */
 .material-icons{ 
     vertical-align: text-top;
@@ -122,8 +127,4 @@ header nobr:hover {
 
 .dropdown:hover .dropdown-content {
     display: block;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: #dcd1f4;
 }
