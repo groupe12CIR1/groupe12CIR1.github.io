@@ -1,7 +1,5 @@
 setInterval(showTime, 1000);
 var chrono_sec = 0;
-var chrono_min = 0;
-var chrono_hour = 0;
 
 function showTime() {
     // met à jour l'horloge
@@ -18,28 +16,12 @@ function showTime() {
 
     // met à jour le chrono
     chrono_sec++;
+    let displayChrono = `${chrono_sec%60}`;
+    displayChrono = chrono_sec%60 < 10 ? "0" + displayChrono : displayChrono; // on ajoute un 0 si nécessaire
     if (chrono_sec > 59){
-        chrono_min++;
-        chrono_min = chrono_min < 10 ? "0" + chrono_min : chrono_min;
-        chrono_sec = "0";
-    }
-    if (chrono_min > 59){
-        chrono_hour++;
-        chrono_hour = chrono_hour < 10 ? "0" + chrono_hour : chrono_hour;
-        chrono_min = "0";
-    }
-
-
-
-    currentChrono = chrono_sec + " ";
-    if (chrono_min != 0){
-        currentChrono = chrono_min + ":" + currentChrono;
-    }
-    if (chrono_hour != 0){
-        currentChrono = chrono_hour + ":" + currentChrono;
-    }
-
-    currentTime += "\n" + currentChrono;
+        displayChrono = `${Math.floor(chrono_sec/60)}:${displayChrono}`; // ajoute les minutes
+    } // le compteur va commencer à être bizarre si le site reste ouvert plus de 59 minutes mais bon, balec, il le restera pas. sagesse > intelligence
+    currentTime += "\n" + displayChrono;
 
     // envoie tout au HTML
     document.getElementById("clock").innerHTML = currentTime;
@@ -47,10 +29,10 @@ function showTime() {
 
 
 function members_click(){
-    if (confirm("WARNING : certains de nos membres sont très moches. êtes vous sûr ?")) {
+    if (confirm("WARNING : Visualiser nos membre coûte 5 à 10 euros par seconde, êtes vous sûr ?")) {
         window.location.replace("Membres.html");
     } else {
-        alert("ils sont pas si moches quand même :(");
+        alert("allez... 4 euros ?");
     }
 }
 
