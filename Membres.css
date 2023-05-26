@@ -7,102 +7,10 @@ a{
     text-decoration: none;
     color:rgb(128, 85, 59);
 }
-.element{
-    display: flex;
-    padding: 0;
-    margin: 0;
-    justify-content: space-between;
-    background-image: url(Images_H/haut_de_page.png);
-    font-size: 125%;
-    align-items: baseline;
-    height: 175px;
-    width: 100%;
-    position: fixed;
-}
 .img_acc{
     width: 145px;
     height: 80px;
     align-self: flex-start;
-}
-
-
-.bloc1:hover{
-    background-color: #dcd1f4;
-}
-.bloc2:hover{
-    background-color: #dcd1f4;
-}
-.bloc3:hover{
-    background-color: #dcd1f4;
-}
-.bloc4:hover{
-    background-color: #dcd1f4;
-}
-.bloc5:hover{
-    background-color: #dcd1f4;
-}
-.b1:hover{
-    background-color: #dcd1f4;
-}
-.bloc{
-    padding: .5em .5em;
-    margin: .3em;
-    background-color: #b090f4;
-    font-family: 'Kanit';
-    text-transform: uppercase;
-    border-radius: 30px;
-}
-.bloc1{
-    padding: .5em .5em;
-    margin: .3em;
-    background-color: #b090f4;
-    font-family: 'Kanit';
-    text-transform: uppercase;
-    border-radius: 30px;
-}
-
-.bloc2{
-    padding: .5em 1em;
-    margin: .3em;
-    background-color: #b090f4;
-    font-family: 'Kanit';
-    text-transform: uppercase;
-    border-radius: 30px;
-}
-.bloc3{
-    padding: .5em 1em;
-    margin: .3em;
-    background-color: #b090f4;
-    font-family: 'Kanit';
-    text-transform: uppercase;
-    border-radius: 30px;
-}
-.bloc4{
-    padding: .5em 1em;
-    margin: .3em;
-    background-color: #b090f4;
-    font-family: 'Kanit';
-    text-transform: uppercase;
-    border-radius: 30px;
-}
-.bloc5{
-    padding: .5em 1em;
-    margin: .3em;
-    background-color: #b090f4;
-    font-family: 'Kanit';
-    text-transform: uppercase;
-    border-radius: 30px;
-}
-
-.b1{
-    padding: .5em 1em;
-    margin: 1.3em;
-    background-color: #b090f4;
-    font-family: 'Kanit';
-    text-transform: uppercase;
-    border-radius: 30px;
-    width: 75px;
-    position: fixed;
 }
 
 #icon{
@@ -360,6 +268,20 @@ layout{
     width: 300px;
     height:300px;
     border-radius: 100%;
+}
+
+#image_grattage{
+    box-sizing: content-box;
+    padding: 1em;
+    width: 300px;
+    height:300px;
+    border-radius: 100%;
+    
+    background:transparent;
+
+    /* recouvre l'autre image */
+    z-index: 9999; 
+    position: absolute;
 }
 
 #image_maher{

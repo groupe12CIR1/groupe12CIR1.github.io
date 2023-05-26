@@ -73,9 +73,9 @@ header nobr:hover {
 }
 
 /* propriétés de l'image du logo ISEN et de sa hitbox */
-.img_acc, .img_acc img{ 
-    width: 175px;
-    height: 80px;
+.img_acc, img, #header-img, #labisenlogo{ 
+    width: 137px;
+    height: 55px;
     align-self: flex-start;
 }
 
@@ -83,7 +83,10 @@ header nobr:hover {
 #clock {
     font-size: 15px;
     width: 50px;
-    margin: 20px;
+    margin-top:1px;
+    margin-bottom: 1px;
+    margin-left: 30px;
+    margin-right: 10px;
     text-align: center;
     text-shadow: #d8232a;
     border: 2px solid black;
@@ -112,7 +115,7 @@ header nobr:hover {
     height:100%;
     top:0px;
     left:0px;
-    z-index:1000;
+    z-index:9999998;
 
     opacity:0.9;
     -webkit-transition: opacity 2000ms linear;

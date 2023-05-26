@@ -1,6 +1,7 @@
 setInterval(showTime, 1000);
 var chrono_sec = 0;
-var disable_loader = false; // changez ça sur "true" pour zapper le loader
+var prix = "5 à 10";
+var disable_loader = true; // changez ça sur "true" pour zapper le loader
 
 // met à jour l'horloge et le chrono de la barre de menu à chaque seconde qui passe
 function showTime() {
@@ -32,9 +33,10 @@ function showTime() {
 
 function members_click(arg){
     console.log(arg);
-    if (confirm("WARNING : Visualiser nos membre coûte 5 à 10 euros par seconde, êtes vous sûr ?")) {
+    if (confirm(`WARNING : Visualiser nos membre coûte ${prix} euros par seconde, êtes vous sûr ?`)) {
         window.location.replace("Membres.html");
     } else {
+        prix = "4";
         alert("allez... 4 euros ?");
     }
 }
