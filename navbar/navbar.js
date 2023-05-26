@@ -1,8 +1,8 @@
 setInterval(showTime, 1000);
 var chrono_sec = 0;
+var disable_loader = false; // changez ça sur "true" pour zapper le loader
 
 // met à jour l'horloge et le chrono de la barre de menu à chaque seconde qui passe
-
 function showTime() {
     // met à jour l'horloge
     let time = new Date();
@@ -30,7 +30,8 @@ function showTime() {
 }
 
 
-function members_click(){
+function members_click(arg){
+    console.log(arg);
     if (confirm("WARNING : Visualiser nos membre coûte 5 à 10 euros par seconde, êtes vous sûr ?")) {
         window.location.replace("Membres.html");
     } else {
@@ -43,11 +44,32 @@ function button_hover(){
     console.log("#dcd1f4");
 }
 
-function hideLoader() {
-    $('#loader_gif').hide();
-}
-//$(window).ready(hideLoader); // décommenter si on veut qu'il se cache dès que la page est chargée
-// cache le loader après 5 secondes
-setTimeout(hideLoader, 5000);
+// se charge de faire disparaître la chips et le fond noir du chargement
+function loader_transition(){
+    let lgif = document.getElementById("loader_gif");
+    let lback = document.getElementById("loader_background");
+    // l'opacité finale des éléments de chargement avant de disparaître
+    lgif.style.opacity = '0';
+    lback.style.opacity = '0';
 
+    if (disable_loader){
+        // on zappe le chargement
+        setTimeout(() => lgif.remove(), 0);
+        setTimeout(() => lback.remove(), 0);
+    }
+    else {
+        // le chargement dure 4 secondes pour la chips, 2 secondes pour le fond
+        setTimeout(() => lgif.remove(), 4000);
+        setTimeout(() => lback.remove(), 2000);
+    }
+
+    //$('#loader_gif').hide(); // cache le loader
+    //$('#loader_background').hide(); // cache le loader
+}
+
+//$(window).ready(loader_transition); // dès que la page est chargée, on commence la transition
+// "cache le loader" après 5 secondes
+//setTimeout(hideLoader, 5000);
+
+loader_transition();
 showTime();

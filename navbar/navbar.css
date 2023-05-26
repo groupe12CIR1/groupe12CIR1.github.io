@@ -43,6 +43,8 @@ header nobr {
     font-family: 'Kanit';
     text-transform: uppercase;
     border-radius: 30px;
+
+    cursor: pointer;
 }
 
 header nobr a, header nobr div button {
@@ -72,7 +74,7 @@ header nobr:hover {
 
 /* propriétés de l'image du logo ISEN et de sa hitbox */
 .img_acc, .img_acc img{ 
-    width: 145px;
+    width: 175px;
     height: 80px;
     align-self: flex-start;
 }
@@ -90,13 +92,31 @@ header nobr:hover {
 
 /* gif de chargement */
 #loader_gif {
-    background: url('https://cdn.discordapp.com/attachments/1108361646059036703/1110920062082240642/chips-potato-chips.gif') no-repeat center center;
+    background: url("chip_speed.gif") no-repeat center center;
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     z-index: 9999999;
+
+    opacity:1;
+    -webkit-transition: opacity 4000ms linear;
+    transition: opacity 4000ms linear;
+}
+
+#loader_background {
+    background-color:black;
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index:1000;
+
+    opacity:0.9;
+    -webkit-transition: opacity 2000ms linear;
+    transition: opacity 2000ms linear;
 }
 
 /* Menus de recherche du navbar */
