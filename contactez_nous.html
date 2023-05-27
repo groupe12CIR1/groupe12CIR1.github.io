@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <script src="navbar/navbar.js" defer></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="contactez-nous.js" defer></script>
+        <script src="contactez_nous.js" defer></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet"> <!-- importe les icônes du navbar -->
         <link rel = "icon" href ="images/pagelogo.png"type = "image/x-icon"> <!-- logo de l'onglet de la page -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- l'horloge -->
@@ -53,10 +53,16 @@
             <h1><b>Contactez le responsable de l'équipe</b></h1>
             <h2><b>(Maher Jridi - maher.jridi[at]isen-ouest.yncrea.fr)</b></h2>
             <form action="contactez_nous.html" method="post">
-                <input type="text" name="prenom_nom" placeholder="Prénom Nom:"><br><br>
-                <input type="email" name="email" placeholder="Email@example.com"><br><br>
-                <textarea name="zone_texte" placeholder="Votre message (1000 caractères maximum)"cols="30" rows="10" maxlength="1000"></textarea><br><br>
-                <input id="env"type="submit" value="Envoyer">
+                <input type="text" name="prenom_nom" placeholder="Prénom Nom:" oninput="verif_nom()">
+                <br><div name="mand_nom" class="mandatory_rem">*Entrez votre prénom et votre nom</div>
+                <br>
+                <input type="email" name="email" placeholder="Email@example.com" oninput="verif_email()">
+                <br><div name="mand_email" class="mandatory_rem">*Entrez une adresse mail valide</div>
+                <br>
+                <textarea name="zone_texte" placeholder="Votre message (1000 caractères maximum)"cols="30" rows="10" maxlength="1000" oninput="verif_champ()"></textarea>
+                <br>
+                <div name="mand_car" class="mandatory_rem">*Entrez entre 20 et 1000 caractères</div>
+                <button id="env" type="submit" disabled>Envoyer</button>
             </form>
         </main>
     </body>

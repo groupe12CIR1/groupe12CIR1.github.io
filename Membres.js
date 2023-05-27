@@ -1,13 +1,5 @@
 var canvas = document.getElementById("image_grattage");
 var ctx = canvas.getContext("2d");
-var img = new Image();
-img.onload = () => {
-    ctx.drawImage(img, 0, 0);
-    ctx.beginPath();
-    ctx.moveTo(0, 50);
-    ctx.stroke();
-};
-/*img.src = "Im_membres/grattage.png"; */
 ctx.fillStyle = "rgba(185, 185, 185, 255)";
 ctx.fillRect(0, 0, 500, 500);
 

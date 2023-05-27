@@ -256,11 +256,14 @@ form {
     padding-top: 1em;
     padding-bottom: 1em;
     border: 2px solid #8759EA;
-    margin-left: 20em;
-    margin-right: 20em;
+    margin-left: 25%;
+    margin-right: 25%;
     margin-bottom: 4em ;
 
     border-radius: 1em;
+
+    width: 52%;
+    min-width: 220px;
 }
 
 form div + div {
@@ -280,7 +283,8 @@ input, textarea {
 font: 1em 'Kanit';
 
 /* Pour que tous les champs texte aient la même dimension */
-width: 600px;
+width: 50%;
+min-width: 200px;
 height: 5;
 box-sizing: border-box;
 
@@ -306,5 +310,11 @@ text-align: center;
 }
 
 #env{
-background-color: #8759EA;
+    background-color: #757575;
+    font: 1em 'Kanit';
+}
+
+.mandatory_rem {
+    color: red;
+    font-size: 10px;
 }
