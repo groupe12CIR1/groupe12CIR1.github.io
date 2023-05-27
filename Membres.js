@@ -7,12 +7,9 @@ img.onload = () => {
     ctx.moveTo(0, 50);
     ctx.stroke();
 };
-img.src = "Im_membres/grattage.png";
-ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
-ctx.fillRect(0, 0, 0, 0);
-
-
-
+/*img.src = "Im_membres/grattage.png"; */
+ctx.fillStyle = "rgba(185, 185, 185, 255)";
+ctx.fillRect(0, 0, 500, 500);
 
 var flag = false,
         prevX = 0,
@@ -37,19 +34,7 @@ canvas.addEventListener("mouseout", function (e) {
     findxy('out', e)
 }, false);
 
-function draw() {
-    ctx.beginPath();
-    ctx.moveTo(prevX, prevY);
-    ctx.lineTo(currX, currY);
-    ctx.strokeStyle = "rgba(0, 0, 200, 0.5)";
-    ctx.lineWidth = 10;
-    ctx.stroke();
-    ctx.closePath();
-}
-
 function findxy(res, e) {
-    ctx.clearRect(0,0,100,50);
-    //console.log(`${res}.`);
     if (res == 'down') { /* si on gratte */
         prevX = currX;
         prevY = currY;
@@ -61,7 +46,6 @@ function findxy(res, e) {
         if (dot_flag) {
             ctx.beginPath();
             ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
-            ctx.fillRect(currX, currY, 2, 2);
             ctx.closePath();
             dot_flag = false;
         }
@@ -75,7 +59,7 @@ function findxy(res, e) {
             prevY = currY;
             currX = e.clientX - canvas.offsetLeft;
             currY = e.clientY - canvas.offsetTop;
-            draw();
+            ctx.clearRect(prevX - 20,prevY / 2 - 10,20,10);
         }
     }
 }
