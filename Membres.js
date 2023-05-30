@@ -113,14 +113,24 @@ for (var i = 0; i < deleteButtons.length; i++) {
   });
 }
 
+// mamma mia
 addMemberButton.addEventListener('click', function() {
   var newMemberName = newMemberNameInput.value;
   if (newMemberName !== "") {
     var newMember = document.createElement('div');
-    newMember.className = 'member';
-    newMember.innerHTML = '<span class="name">' + newMemberName + '</span>' +
-      '<button class="deleteButton">Supprimer</button>';
-    document.getElementById('members').appendChild(newMember);
+    newMember.className = 'carte_version_petite';
+    newMember.innerHTML = `<div><section><h2>${newMemberName}</h2><p>Période : inconnue<br>Projet : inconnu<br><br>ISEN Yncréa Ouest –Nantes</p><button class='deleteButton'>supprimer</button></section>`
+    document.getElementsByTagName("main")[0].appendChild(newMember);
+    // on "active" le bouton d'autodestruction
+    document.getElementsByClassName('deleteButton')[document.getElementsByClassName('deleteButton').length - 1].addEventListener('click', function() {
+      if (isEditMode) {
+        var confirmDelete = confirm("Êtes-vous sûr de vouloir supprimer ce membre ?");
+        if (confirmDelete) {
+          this.parentNode.parentNode.parentNode.remove(); // autodestruction
+        }
+      }
+    });
+    //document.getElementById('members').appendChild(newMember);
     newMemberNameInput.value = "";
   }
 });
