@@ -55,3 +55,25 @@ function verif_champ(){
     }
     valider_envoi();
 }
+
+env.addEventListener("click", function() { //attache le bouton à un évènement quand on clic dessus
+    var a = prompt("Pile ou Face ?");
+    var a = Math.random();
+ 
+    if (a =="pile" && a<0.5){
+        alert ("Tu as gagné, le message a bien été envoyé !");
+        FomulaireContact.submit();
+    }
+    if (a =="pile" && a>=0.5){
+        alert ("Perdu ! Je t'invite à recommencer.");
+        FomulaireContact.reset(); //supprime tout le formulaire et ne l'envoie pas
+    }
+    if ((a =="face") && (a>=0.5)){
+        alert ("Tu as gagné, le message a bien été envoyé !"); 
+        FomulaireContact.submit();
+    }
+    else{
+        alert ("Perdu ! Je t'invite à recommencer.");
+        FomulaireContact.reset();
+    }
+});
