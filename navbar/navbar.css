@@ -104,8 +104,8 @@ header nobr:hover {
     z-index: 9999999;
 
     opacity:1;
-    -webkit-transition: opacity 4000ms linear;
-    transition: opacity 4000ms linear;
+    -webkit-transition: opacity 2000ms linear;
+    transition: opacity 2000ms linear;
 }
 
 #loader_background {
@@ -118,8 +118,8 @@ header nobr:hover {
     z-index:9999998;
 
     opacity:0.9;
-    -webkit-transition: opacity 2000ms linear;
-    transition: opacity 2000ms linear;
+    -webkit-transition: opacity 1000ms linear;
+    transition: opacity 1000ms linear;
 }
 
 /* Menus de recherche du navbar */

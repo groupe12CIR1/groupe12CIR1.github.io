@@ -1,7 +1,7 @@
 setInterval(showTime, 1000);
 var chrono_sec = 0;
 var prix = "5 à 10";
-var disable_loader = true; // changez ça sur "true" pour zapper le loader
+var disable_loader = false; // changez ça sur "true" pour zapper le loader
 
 // met à jour l'horloge et le chrono de la barre de menu à chaque seconde qui passe
 function showTime() {
@@ -30,11 +30,15 @@ function showTime() {
     document.getElementById("clock").innerHTML = currentTime;
 }
 
+function button_click(page){
+    loader_transition(1); // on rend le loader visible, le css et l'import automatique de JS feront le reste feront le reste
+    setTimeout(() => window.location.replace(page), 2000); // une fois la transition de 2 secondes terminée, on redirige
+}
 
-function members_click(arg){
-    console.log(arg);
+
+function members_click(){
     if (confirm(`WARNING : Visualiser nos membre coûte ${prix} euros par seconde, êtes vous sûr ?`)) {
-        window.location.replace("Membres.html");
+        button_click("Membres.html");
     } else {
         prix = "4";
         alert("allez... 4 euros ?");
@@ -47,22 +51,27 @@ function button_hover(){
 }
 
 // se charge de faire disparaître la chips et le fond noir du chargement
-function loader_transition(){
+function loader_transition(set){
+    console.log(set);
     let lgif = document.getElementById("loader_gif");
+    console.log(lgif);
     let lback = document.getElementById("loader_background");
-    // l'opacité finale des éléments de chargement avant de disparaître
-    lgif.style.opacity = '0';
-    lback.style.opacity = '0';
+    
 
     if (disable_loader){
         // on zappe le chargement
-        setTimeout(() => lgif.remove(), 0);
-        setTimeout(() => lback.remove(), 0);
+        lgif.hidden = true, 0;
+        lback.hidden = true, 0;
     }
     else {
-        // le chargement dure 4 secondes pour la chips, 2 secondes pour le fond
-        setTimeout(() => lgif.remove(), 4000);
-        setTimeout(() => lback.remove(), 2000);
+        // lance la transition
+        setTimeout(() => lback.style.opacity = `${set}`, 1000*set); // si on cherche à la faire apparaître, le début de la tr doit être délayée
+        lgif.style.opacity = `${set}`;
+        // après 2 secondes, les deux sont cachés
+        lgif.hidden = false;
+        lback.hidden = false;
+        setTimeout(() => lgif.hidden = true, 2000);
+        setTimeout(() => lback.hidden = true, 2000);
     }
 
     //$('#loader_gif').hide(); // cache le loader
@@ -73,5 +82,5 @@ function loader_transition(){
 // "cache le loader" après 5 secondes
 //setTimeout(hideLoader, 5000);
 
-loader_transition();
+loader_transition(0); // on lance la transition d'effacement des loaders
 showTime();
