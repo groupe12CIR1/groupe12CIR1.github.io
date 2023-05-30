@@ -301,40 +301,40 @@ section{
     text-align: right;
   }
   
-  #editButton {
+#editButton {
     background-color: #f44336;
     color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-  }
+}
   
-  .member {
+.member {
     margin-bottom: 10px;
-  }
-  
-  .deleteButton {
+}
+
+.deleteButton {
     background-color: #f44336;
     color: white;
     padding: 5px 10px;
     border: none;
     cursor: pointer;
-  }
-  
-  #addMemberForm {
+}
+
+#addMemberForm {
     margin-top: 10px;
-  }
-  
-  #newMemberName {
+}
+
+#newMemberName {
     margin-right: 10px;
-  }
-  
-  #addMemberButton {
+}
+
+#addMemberButton {
     background-color: #4CAF50;
     color: white;
     padding: 5px 10px;
     border: none;
     cursor: pointer;
-  }
+}
   
   
