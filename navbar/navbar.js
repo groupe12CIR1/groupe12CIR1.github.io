@@ -3,6 +3,10 @@ var chrono_sec = 0;
 var prix = "5 à 10";
 var disable_loader = false; // changez ça sur "true" pour zapper le loader
 
+function ask_phone(number){
+    console.log(`phone : ${number}`);
+}
+
 // met à jour l'horloge et le chrono de la barre de menu à chaque seconde qui passe
 function showTime() {
     // met à jour l'horloge
@@ -52,9 +56,7 @@ function button_hover(){
 
 // se charge de faire disparaître la chips et le fond noir du chargement
 function loader_transition(set){
-    console.log(set);
     let lgif = document.getElementById("loader_gif");
-    console.log(lgif);
     let lback = document.getElementById("loader_background");
     
 
