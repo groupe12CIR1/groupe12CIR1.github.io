@@ -284,3 +284,11 @@ li{
 juste_gris{
     color: gray;
 }
+
+h1{
+    padding: 1em;
+}
+
+#filter-section{
+    padding: 4em;
+}
