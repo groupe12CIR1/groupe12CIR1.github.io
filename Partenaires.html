@@ -15,33 +15,34 @@
     </head>
 
     <header>
-        <a id="labisenlogo" class="img_acc" href="Accueil.html"><img src="Images_H/LabISEN.png" href="Accueil.html" alt="LabISEN" id="header-img" width="170px"height="70px"></a>
+        <a id="labisenlogo" class="img_acc" onclick="button_click('Accueil.html')"><img src="Images_H/LabISEN.png" href="Accueil.html" alt="LabISEN" id="header-img" width="170px" height="70px"></a>
         <div id="clock">0:0:00</div>
-        <nobr onmouseover="button_hover()"><a class="nav-link" href="Accueil.html"><span class="material-icons">home</span> Accueil</a></nobr>
+        <nobr onmouseover="button_hover()"><a class="nav-link" onclick="button_click('Accueil.html')"><span class="material-icons">home</span> Accueil</a></nobr>
         <nobr onmouseover="button_hover()">
             <div class="dropdown">
                 <button class="dropbtn">Recherche<span class="material-icons">expand_more</span></button>
                 <div class="dropdown-content">
-                    <a href="Nos_axes.html"><span class="material-icons">biotech</span> Thématiques de Recherche</a>
-                    <a href="plateformes_tech.html"><span class="material-icons">domain</span> Plateformes Technologique</a>
+                    <a onclick="button_click('Nos_axes.html')"><span class="material-icons">biotech</span> Thématiques de Recherche</a>
+                    <a onclick="button_click('plateformes_tech.html')"><span class="material-icons">domain</span> Plateformes Technologique</a>
                 </div>
             </div> 
         </nobr>
         <nobr onmouseover="button_hover()"><a onclick="members_click()"><span class="material-icons">people</span> Membres</a></nobr>
-        <nobr onmouseover="button_hover()"><a href="Projets.html"><span class="material-icons">list_alt</span> Projets</a></nobr>
-        <nobr onmouseover="button_hover()"><a href="Publications.html"><span class="material-icons">feed</span> Publication</a></nobr>
-        <nobr onmouseover="button_hover()" id="selected_page"><a href="Partenaires.html"><span class="material-icons">handshake</span> Partenaires</a></nobr>   
+        <nobr onmouseover="button_hover()"><a onclick="button_click('Projets.html')"><span class="material-icons">list_alt</span> Projets</a></nobr>
+        <nobr onmouseover="button_hover()"><a onclick="button_click('Publications.html')"><span class="material-icons">feed</span> Publication</a></nobr>
+        <nobr onmouseover="button_hover()" id="selected_page"><a onclick="button_click('Partenaires.html')"><span class="material-icons">handshake</span> Partenaires</a></nobr>   
         <nobr onmouseover="button_hover()">
             <div class="dropdown">
                 <button class="dropbtn">Contact<span class="material-icons">expand_more</span></button>
                 <div class="dropdown-content">
-                    <a href="contactez_nous.html"><span class="material-icons">contact_mail</span> Contactez-Nous</a>
-                    <a href="plan_daccès.html"><span class="material-icons">map</span> Plan d'accès</a>
-                    <a href="offre_demploi.html"><span class="material-icons">work_outline</span> Offres d'emploi</a>
+                    <a onclick="button_click('contactez_nous.html')"><span class="material-icons">contact_mail</span> Contactez-Nous</a>
+                    <a onclick="button_click('plan_daccès.html')"><span class="material-icons">map</span> Plan d'accès</a>
+                    <a onclick="button_click('offre_demploi.html')"><span class="material-icons">work_outline</span> Offres d'emploi</a>
                 </div>
             </div>
         </nobr>
     </header>
+    
 
     <body>
         <div id="loader_gif"></div>
@@ -131,25 +132,25 @@
     <footer>
         <div_Nantes>
             <h3>Nantes</h3>
-            <p_1><a href="tel:+33 02 30 13 05 60" class="num">02 30 13 05 60</a></p_1><br>
+            <p_1><a href="tel:+33 02 30 13 05 60" oncopy="ask_phone('02 30 13 05 60')" class="num">02 30 13 05 60</a></p_1><br>
             <p_2>33 Quater Avenue du<br>Champ de Manœuvres</p_2>
         </div_Nantes>
 
         <div_Caen>
             <h3>Caen</h3>
-            <p_1><a href="tel:+33 02 30 31 03 20" class="num">02 30 31 03 20</a></p_1><br>
+            <p_1><a href="tel:+33 02 30 31 03 20" oncopy="ask_phone('02 30 31 03 20')" class="num">02 30 31 03 20</a></p_1><br>
             <p_2>8 Boulevard Croix Guérin</p_2>
         </div_Caen>
 
         <div_Brest>
             <h3>Brest</h3>
-            <p_1><a href="tel:+33 02 98 03 84 00" class="num">02 98 03 84 00</a></p_1><br>
+            <p_1><a href="tel:+33 02 98 03 84 00" oncopy="ask_phone('02 98 03 84 00')" class="num">02 98 03 84 00</a></p_1><br>
             <p_2>20 rue Cuirassé Bretagne</p_2>
         </div_Brest>
 
         <div_Rennes>
             <h3>Rennes</h3>
-            <p_1><a href="tel:+33 02 30 13 02 50" class="num">02 30 13 02 50</a></p_1><br>
+            <p_1><a href="tel:+33 02 30 13 02 50" oncopy="ask_phone('02 30 13 02 50')" class="num">02 30 13 02 50</a></p_1><br>
             <p_2>2 rue de la Châtaigneraie</p_2>
         </div_Rennes>
 
@@ -161,8 +162,13 @@
             </span>
             
             <span id="sous_flex">
-                <p_3>Amaury A.</p_3>
                 <a href="https://www.linkedin.com/in/amaury-77545725a/" target="_blank"><img class="lien_linkedin_Am" src="Images_H/linkedin.svg"></a>
+                <p_3 id="barre_vert">Amaury A.</p_3>
+            </span>
+
+            <span id="sous_flex">
+                <a href="https://www.linkedin.com" target="_blank"><img class="lien_linkedin_Am" src="Images_H/linkedin.svg"></a>
+                <p_3>Achille W.</p_3>
             </span>
         </div>
     </footer>

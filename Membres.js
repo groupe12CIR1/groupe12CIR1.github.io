@@ -55,3 +55,78 @@ function findxy(res, e) {
         }
     }
 }
+
+var isEditMode = false;
+var isAdminAuthenticated = false;
+
+var editButton = document.getElementById('editButton');
+var deleteButtons = document.getElementsByClassName('deleteButton');
+var addMemberButton = document.getElementById('addMemberButton');
+var addMemberForm = document.getElementById('addMemberForm');
+var newMemberNameInput = document.getElementById('newMemberName');
+
+editButton.addEventListener('click', function() {
+  if (isEditMode) {
+    var confirmExit = confirm("Êtes-vous sûr de vouloir quitter le mode édition ?");
+    if (confirmExit) {
+      exitEditMode();
+    }
+  } else {
+    var username = prompt("Veuillez entrer le nom d'utilisateur administrateur", "");
+    if (username === "admin") {
+      var password = prompt("Veuillez entrer le mot de passe administrateur", "");
+      if (password === "admin_pwd") {
+        enterEditMode();
+      } else {
+        alert("Mot de passe incorrect");
+      }
+    } else {
+      alert("Nom d'utilisateur administrateur incorrect");
+    }
+  }
+});
+
+for (var i = 0; i < deleteButtons.length; i++) {
+  deleteButtons[i].addEventListener('click', function() {
+    if (isEditMode) {
+      var confirmDelete = confirm("Êtes-vous sûr de vouloir supprimer ce membre ?");
+      if (confirmDelete) {
+        this.parentNode.remove();
+      }
+    }
+  });
+}
+
+addMemberButton.addEventListener('click', function() {
+  var newMemberName = newMemberNameInput.value;
+  if (newMemberName !== "") {
+    var newMember = document.createElement('div');
+    newMember.className = 'member';
+    newMember.innerHTML = '<span class="name">' + newMemberName + '</span>' +
+      '<button class="deleteButton">Supprimer</button>';
+    document.getElementById('members').appendChild(newMember);
+    newMemberNameInput.value = "";
+  }
+});
+
+function enterEditMode() {
+  isEditMode = true;
+  isAdminAuthenticated = true;
+  editButton.style.backgroundColor = "#4CAF50";
+  editButton.textContent = "Mode normal";
+  for (var i = 0; i < deleteButtons.length; i++) {
+    deleteButtons[i].style.display = "inline-block";
+  }
+  addMemberForm.style.display = "block";
+}
+
+function exitEditMode() {
+  isEditMode = false;
+  isAdminAuthenticated = false;
+  editButton.style.backgroundColor = "#f44336";
+  editButton.textContent = "Mode édition";
+  for (var i = 0; i < deleteButtons.length; i++) {
+    deleteButtons[i].style.display = "none";
+  }
+  addMemberForm.style.display = "none";
+}
