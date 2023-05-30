@@ -4,7 +4,15 @@ var prix = "5 à 10";
 var disable_loader = false; // changez ça sur "true" pour zapper le loader
 
 function ask_phone(number){
-    console.log(`phone : ${number}`);
+    let nm_input = prompt(`Si vous voulez appeller le numéro ${number} entrez le de nouveau :`);
+    if (number == nm_input){ // si les numéros correspondent
+        let sonnerie = new Audio("navbar/sonnerie_charmante.mp3");
+        console.log(`Vous appellez le numéro ${number}`);
+        sonnerie.play() // attention les oreilles
+    }
+    else {
+        alert("Les numéros ne correspondent pas ! Appel annulé.");
+    }
 }
 
 // met à jour l'horloge et le chrono de la barre de menu à chaque seconde qui passe
