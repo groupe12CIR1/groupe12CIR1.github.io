@@ -25,6 +25,9 @@ header {
     /*text-align: center;*/
     /* display:inline-block; */
     /*vertical-align:top;*/
+
+    /* recouvre tout */
+    z-index: 9999999999999999; 
 }
 
 header nobr {

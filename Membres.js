@@ -1,9 +1,13 @@
+/*
+PARTIE CARTE GRATTABLE
+*/
+
 var canvas = document.getElementById("image_grattage");
 var ctx = canvas.getContext("2d");
 ctx.fillStyle = "rgba(185, 185, 185, 255)";
-ctx.fillRect(0, 0, 500, 500);
+ctx.fillRect(0, 0, 500, 500); // remplis le canvas de gris 
 
-var flag = false,
+var mousedown = false,
         prevX = 0,
         currX = 0,
         prevY = 0,
@@ -27,13 +31,13 @@ canvas.addEventListener("mouseout", function (e) {
 }, false);
 
 function findxy(res, e) {
-    if (res == 'down') { /* si on gratte */
+    if (res == 'down') { // si on commence à gratter
         prevX = currX;
         prevY = currY;
         currX = e.clientX - canvas.offsetLeft;
         currY = e.clientY - canvas.offsetTop;
 
-        flag = true;
+        mousedown = true;
         dot_flag = true;
         if (dot_flag) {
             ctx.beginPath();
@@ -42,11 +46,11 @@ function findxy(res, e) {
             dot_flag = false;
         }
     }
-    if (res == 'up' || res == "out") {
-        flag = false;
+    if (res == 'up' || res == "out") { // si on relâche la souris ou sors du cadre
+        mousedown = false;
     }
     if (res == 'move') {
-        if (flag) {
+        if (mousedown) {
             prevX = currX;
             prevY = currY;
             currX = e.clientX - canvas.offsetLeft;
@@ -56,26 +60,37 @@ function findxy(res, e) {
     }
 }
 
+/*
+PARTIE EDIT MODE
+*/
+
+var debug_mode = true;
 var isEditMode = false;
-var isAdminAuthenticated = false;
 
 var editButton = document.getElementById('editButton');
 var deleteButtons = document.getElementsByClassName('deleteButton');
+console.log(`deleteButtons : ${deleteButtons}`);
+for (var i = 0; i < deleteButtons.length; i++) {
+  console.log(deleteButtons[i]);
+}
 var addMemberButton = document.getElementById('addMemberButton');
 var addMemberForm = document.getElementById('addMemberForm');
 var newMemberNameInput = document.getElementById('newMemberName');
 
 editButton.addEventListener('click', function() {
   if (isEditMode) {
-    var confirmExit = confirm("Êtes-vous sûr de vouloir quitter le mode édition ?");
-    if (confirmExit) {
+    if (confirm("Êtes-vous sûr de vouloir quitter le mode édition ?")) {
       exitEditMode();
     }
   } else {
-    var username = prompt("Veuillez entrer le nom d'utilisateur administrateur", "");
-    if (username === "admin") {
-      var password = prompt("Veuillez entrer le mot de passe administrateur", "");
-      if (password === "admin_pwd") {
+    if (debug_mode){
+      enterEditMode();
+      return;
+    }
+    // si le nom d'administrateur est correct
+    if (prompt("Veuillez entrer le nom d'utilisateur administrateur", "") === "admin") {
+      // si le mot de passe du compte admin est correct
+      if (prompt("Veuillez entrer le mot de passe administrateur", "") === "admin_pwd") {
         enterEditMode();
       } else {
         alert("Mot de passe incorrect");
@@ -86,12 +101,13 @@ editButton.addEventListener('click', function() {
   }
 });
 
+// ne pas utiliser de "foreach" (raison : javascript est nul)
 for (var i = 0; i < deleteButtons.length; i++) {
   deleteButtons[i].addEventListener('click', function() {
     if (isEditMode) {
       var confirmDelete = confirm("Êtes-vous sûr de vouloir supprimer ce membre ?");
       if (confirmDelete) {
-        this.parentNode.remove();
+        this.parentNode.parentNode.remove(); // autodestruction
       }
     }
   });
@@ -111,10 +127,10 @@ addMemberButton.addEventListener('click', function() {
 
 function enterEditMode() {
   isEditMode = true;
-  isAdminAuthenticated = true;
   editButton.style.backgroundColor = "#4CAF50";
   editButton.textContent = "Mode normal";
   for (var i = 0; i < deleteButtons.length; i++) {
+    console.log(deleteButtons[i]);
     deleteButtons[i].style.display = "inline-block";
   }
   addMemberForm.style.display = "block";
@@ -122,7 +138,6 @@ function enterEditMode() {
 
 function exitEditMode() {
   isEditMode = false;
-  isAdminAuthenticated = false;
   editButton.style.backgroundColor = "#f44336";
   editButton.textContent = "Mode édition";
   for (var i = 0; i < deleteButtons.length; i++) {
@@ -130,3 +145,5 @@ function exitEditMode() {
   }
   addMemberForm.style.display = "none";
 }
+
+exitEditMode()
