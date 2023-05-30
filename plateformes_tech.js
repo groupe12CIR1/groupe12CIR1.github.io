@@ -5,9 +5,9 @@ function main(){
 main();
 
 function modal(){
-    const openModalButton = document.getElementById('openModal');
-    const closeModalButton = document.getElementById('closeModal');
-    const modal = document.getElementById('modal');
+    let openModalButton = document.getElementById('openModal');
+    let closeModalButton = document.getElementById('closeModal');
+    let modal = document.getElementById('modal');
 
     openModalButton.addEventListener('click', function() {
     modal.style.display = 'block';
@@ -19,17 +19,16 @@ function modal(){
 }
 
 function modal1(){
-    const openModalButton2 = document.getElementById('openModal2');
-const closeModalButton2 = document.getElementById('closeModal2');
-const modal2 = document.getElementById('modal2');
+    let openModalButton2 = document.getElementById('openModal2');
+    let closeModalButton2 = document.getElementById('closeModal2');
+    let modal2 = document.getElementById('modal2');
 
-openModalButton2.addEventListener('click', function() {
-  modal2.style.display = 'block';
-});
+    openModalButton2.addEventListener('click', function() {
+      modal2.style.display = 'block';
+    });
 
-closeModalButton2.addEventListener('click', function() {
-  modal2.style.display = 'none';
-});
-
+    closeModalButton2.addEventListener('click', function() {
+      modal2.style.display = 'none';
+    });
 }
 

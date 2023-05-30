@@ -1,10 +1,10 @@
-var heading = document.getElementById("desc");
-var text = heading.textContent;
+let heading = document.getElementById("desc");
+let text = heading.textContent;
 heading.textContent = "";
 
 function animateHeading() {
-  var currentCharIndex = 0;
-  var interval = setInterval(function() {
+  let currentCharIndex = 0;
+  let interval = setInterval(function() {
     if (currentCharIndex < text.length) {
       heading.textContent += text[currentCharIndex];
       currentCharIndex++;
