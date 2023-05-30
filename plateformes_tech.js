@@ -1,5 +1,6 @@
 function main(){
     modal();
+    modal1();
 }
 main();
 
@@ -16,3 +17,19 @@ function modal(){
     modal.style.display = 'none';
     });
 }
+
+function modal1(){
+    const openModalButton2 = document.getElementById('openModal2');
+const closeModalButton2 = document.getElementById('closeModal2');
+const modal2 = document.getElementById('modal2');
+
+openModalButton2.addEventListener('click', function() {
+  modal2.style.display = 'block';
+});
+
+closeModalButton2.addEventListener('click', function() {
+  modal2.style.display = 'none';
+});
+
+}
+
