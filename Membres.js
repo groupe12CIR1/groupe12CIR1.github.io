@@ -68,11 +68,13 @@ var debug_mode = false;
 var isEditMode = false;
 
 var editButton = document.getElementById('editButton');
+var editNameButtons = document.getElementsByClassName('editNameButton');
 var deleteButtons = document.getElementsByClassName('deleteButton');
+/*
 console.log(`deleteButtons : ${deleteButtons}`);
 for (var i = 0; i < deleteButtons.length; i++) {
   console.log(deleteButtons[i]);
-}
+} */
 var addMemberButton = document.getElementById('addMemberButton');
 var addMemberForm = document.getElementById('addMemberForm');
 var newMemberNameInput = document.getElementById('newMemberName');
@@ -113,6 +115,15 @@ for (var i = 0; i < deleteButtons.length; i++) {
   });
 }
 
+for (var i = 0; i < editNameButtons.length; i++) {
+  editNameButtons[i].addEventListener('click', function() {
+    if (isEditMode) {
+      let newName = prompt("Veuillez entrer un nouveau nom", "");
+      this.previousSibling.previousSibling.textContent = newName;
+    }
+  });
+}
+
 // mamma mia
 addMemberButton.addEventListener('click', function() {
   var newMemberName = newMemberNameInput.value;
@@ -140,8 +151,10 @@ function enterEditMode() {
   editButton.style.backgroundColor = "#4CAF50";
   editButton.textContent = "Mode normal";
   for (var i = 0; i < deleteButtons.length; i++) {
-    console.log(deleteButtons[i]);
     deleteButtons[i].style.display = "inline-block";
+  }
+  for (var i = 0; i < editNameButtons.length; i++) {
+    editNameButtons[i].style.display = "inline-block";
   }
   addMemberForm.style.display = "block";
 }
@@ -152,6 +165,9 @@ function exitEditMode() {
   editButton.textContent = "Mode édition";
   for (var i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].style.display = "none";
+  }
+  for (var i = 0; i < editNameButtons.length; i++) {
+    editNameButtons[i].style.display = "none";
   }
   addMemberForm.style.display = "none";
 }
