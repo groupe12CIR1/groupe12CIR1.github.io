@@ -64,7 +64,7 @@ function findxy(res, e) {
 PARTIE EDIT MODE
 */
 
-var debug_mode = true;
+var debug_mode = false;
 var isEditMode = false;
 
 var editButton = document.getElementById('editButton');
