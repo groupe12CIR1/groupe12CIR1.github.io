@@ -35,7 +35,7 @@ function showTime() {
     displayChrono = chrono_sec%60 < 10 ? "0" + displayChrono : displayChrono; // on ajoute un 0 si nécessaire
     if (chrono_sec > 59){
         displayChrono = `${Math.floor(chrono_sec/60)}:${displayChrono}`; // ajoute les minutes
-    } // le compteur va commencer à être bizarre si le site reste ouvert plus de 59 minutes mais bon, balec, il le restera pas. sagesse > intelligence
+    }
     currentTime += "\n" + displayChrono;
 
     // envoie tout au HTML
