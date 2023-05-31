@@ -27,7 +27,7 @@ header {
     /*vertical-align:top;*/
 
     /* recouvre tout */
-    z-index: 9999999999999999; 
+    z-index: 150; 
 }
 
 header nobr {
@@ -99,12 +99,12 @@ header nobr:hover {
 /* gif de chargement */
 #loader_gif {
     background: url("chip_speed.gif") no-repeat center center;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    z-index: 9999999;
+    z-index: 1001;
 
     opacity:1;
     -webkit-transition: opacity 2000ms linear;
@@ -118,7 +118,7 @@ header nobr:hover {
     height:100%;
     top:0px;
     left:0px;
-    z-index:9999998;
+    z-index:1000;
 
     opacity:0.9;
     -webkit-transition: opacity 1000ms linear;

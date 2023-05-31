@@ -280,7 +280,7 @@ layout{
     background:transparent;
 
     /* recouvre l'autre image */
-    z-index: 9999; 
+    z-index: 100; 
     position: absolute;
 }
 
